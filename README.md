@@ -5,7 +5,7 @@
 
 Let's create awesome landing page using flutter, first of all you need to enable flutter web support by following below link.
 
-#### [Enable Flutter Web Support]https://flutter.dev/docs/get-started/web
+#### [Enable Flutter Web Support](https://flutter.dev/docs/get-started/web)
 
 #### [Design Credits](https://www.uplabs.com/posts/cruelty-free-landing-page)
 
