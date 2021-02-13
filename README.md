@@ -11,4 +11,4 @@ Let's create awesome landing page using flutter, first of all you need to enable
 
 ### Preview
 
-![App UI](/preview.png)
+![App UI](/preview.jpg)
