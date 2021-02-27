@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/responsive.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
+import 'menu_item.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -30,56 +32,40 @@ class Header extends StatelessWidget {
 
           Spacer(),
 
-          NavItem(
-            title: 'Home',
-            tapEvent: () {},
-          ),
-          NavItem(
-            title: 'Donate',
-            tapEvent: () {},
-          ),
-          NavItem(
-            title: 'Contact Us',
-            tapEvent: () {},
-          ),
-          NavItem(
-            title: 'Login',
-            tapEvent: () {},
-          ),
-          NavItem(
-            title: 'Shop',
-            tapEvent: () {},
-          ),
+          if (!isMobile(context))
+            Row(
+              children: [
+                NavItem(
+                  title: 'Home',
+                  tapEvent: () {},
+                ),
+                NavItem(
+                  title: 'Donate',
+                  tapEvent: () {},
+                ),
+                NavItem(
+                  title: 'Contact Us',
+                  tapEvent: () {},
+                ),
+                NavItem(
+                  title: 'Login',
+                  tapEvent: () {},
+                ),
+                NavItem(
+                  title: 'Shop',
+                  tapEvent: () {},
+                ),
+              ],
+            ),
+
+          if (isMobile(context))
+            IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              }
+            )
         ],
-      ),
-    );
-  }
-}
-
-class NavItem extends StatelessWidget {
-  const NavItem({
-    Key key,
-    @required this.title,
-    @required this.tapEvent
-  }) : super(key: key);
-
-  final String title;
-  final GestureTapCallback tapEvent;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: tapEvent,
-      hoverColor: Colors.transparent,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15),
-        child: Text(
-          title,
-          style: TextStyle(
-            color: kTextColor,
-            fontWeight: FontWeight.w300
-          ),
-        ),
       ),
     );
   }

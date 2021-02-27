@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/responsive.dart';
 
 import '../constants.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return (!isMobile(context)) ? DesktopFooter() : MobileFooter();
+  }
+}
+
+class DesktopFooter extends StatelessWidget {
+  const DesktopFooter({
     Key key,
   }) : super(key: key);
 
@@ -23,31 +35,79 @@ class Footer extends StatelessWidget {
             )
           ),
 
-          Expanded(
-            flex: 2,
-            child: Row(
-              children: <Widget>[
-                NavItem(
-                  title: 'Twitter',
-                  tapEvent: () {},
-                ),
+          
+            Expanded(
+              flex: 2,
+              child: Row(
+                children: <Widget>[
+                  NavItem(
+                    title: 'Twitter',
+                    tapEvent: () {},
+                  ),
 
-                NavItem(
-                  title: 'Facebook',
-                  tapEvent: () {},
-                ),
+                  NavItem(
+                    title: 'Facebook',
+                    tapEvent: () {},
+                  ),
 
-                NavItem(
-                  title: 'Linkedin',
-                  tapEvent: () {},
-                ),
+                  NavItem(
+                    title: 'Linkedin',
+                    tapEvent: () {},
+                  ),
 
-                NavItem(
-                  title: 'Instagram',
-                  tapEvent: () {},
-                ),
-              ],
-            )
+                  NavItem(
+                    title: 'Instagram',
+                    tapEvent: () {},
+                  ),
+                ],
+              )
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class MobileFooter extends StatelessWidget {
+  const MobileFooter({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      child: Column(
+        children: <Widget>[
+          Text(
+            'All Right Reserved',
+            style: TextStyle(
+              fontSize: 10
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              NavItem(
+                title: 'Twitter',
+                tapEvent: () {},
+              ),
+
+              NavItem(
+                title: 'Facebook',
+                tapEvent: () {},
+              ),
+
+              NavItem(
+                title: 'Linkedin',
+                tapEvent: () {},
+              ),
+
+              NavItem(
+                title: 'Instagram',
+                tapEvent: () {},
+              ),
+            ],
           )
         ],
       ),
