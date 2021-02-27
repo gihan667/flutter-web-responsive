@@ -1,9 +1,9 @@
 # Flutter Web Landing Page UI
 
-## This is not Fully Responsive yet
-## [Watch it on YouTube](https://youtu.be/PM-ASOgxBn8)
+## This is the Responsive version of [This Landing Page](https://github.com/gihan667/flutter-web-landing-page)
+## [Watch it on YouTube](https://youtu.be/hntFZd5bddU)
 
-Let's create awesome landing page using flutter, first of all you need to enable flutter web support by following below link.
+Let's create awesome fully responsive landing page using flutter, first of all you need to enable flutter web support by following below link. We use Flutter MediaQuery to make this UI Responsive on Mobile, Tab & Desktops.
 
 #### [Enable Flutter Web Support](https://flutter.dev/docs/get-started/web)
 
