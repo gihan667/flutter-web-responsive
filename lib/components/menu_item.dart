@@ -4,9 +4,9 @@ import '../constants.dart';
 
 class NavItem extends StatelessWidget {
   const NavItem({
-    Key key,
-    @required this.title,
-    @required this.tapEvent
+    Key? key,
+    required this.title,
+    required this.tapEvent
   }) : super(key: key);
 
   final String title;

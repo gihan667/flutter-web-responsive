@@ -6,7 +6,7 @@ import '../../../constants.dart';
 
 class Jumbotron extends StatelessWidget {
   const Jumbotron({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

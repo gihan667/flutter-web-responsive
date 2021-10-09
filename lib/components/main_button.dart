@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({
-    Key key,
-    @required this.title,
-    @required this.tapEvent,
-    @required this.color,
+    Key? key,
+    required this.title,
+    required this.tapEvent,
+    required this.color,
   }) : super(key: key);
 
   final String title;

@@ -5,7 +5,7 @@ import '../constants.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -16,7 +16,7 @@ class Footer extends StatelessWidget {
 
 class DesktopFooter extends StatelessWidget {
   const DesktopFooter({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -35,33 +35,32 @@ class DesktopFooter extends StatelessWidget {
             )
           ),
 
-          
-            Expanded(
-              flex: 2,
-              child: Row(
-                children: <Widget>[
-                  NavItem(
-                    title: 'Twitter',
-                    tapEvent: () {},
-                  ),
+          Expanded(
+            flex: 2,
+            child: Row(
+              children: <Widget>[
+                NavItem(
+                  title: 'Twitter',
+                  tapEvent: () {},
+                ),
 
-                  NavItem(
-                    title: 'Facebook',
-                    tapEvent: () {},
-                  ),
+                NavItem(
+                  title: 'Facebook',
+                  tapEvent: () {},
+                ),
 
-                  NavItem(
-                    title: 'Linkedin',
-                    tapEvent: () {},
-                  ),
+                NavItem(
+                  title: 'Linkedin',
+                  tapEvent: () {},
+                ),
 
-                  NavItem(
-                    title: 'Instagram',
-                    tapEvent: () {},
-                  ),
-                ],
-              )
-            ),
+                NavItem(
+                  title: 'Instagram',
+                  tapEvent: () {},
+                ),
+              ],
+            )
+          ),
         ],
       ),
     );
@@ -70,12 +69,13 @@ class DesktopFooter extends StatelessWidget {
 
 class MobileFooter extends StatelessWidget {
   const MobileFooter({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       margin: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Column(
         children: <Widget>[
@@ -85,24 +85,24 @@ class MobileFooter extends StatelessWidget {
               fontSize: 10
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Wrap(
+            alignment: WrapAlignment.center,
             children: <Widget>[
               NavItem(
                 title: 'Twitter',
                 tapEvent: () {},
               ),
-
+          
               NavItem(
                 title: 'Facebook',
                 tapEvent: () {},
               ),
-
+          
               NavItem(
                 title: 'Linkedin',
                 tapEvent: () {},
               ),
-
+          
               NavItem(
                 title: 'Instagram',
                 tapEvent: () {},
@@ -117,9 +117,9 @@ class MobileFooter extends StatelessWidget {
 
 class NavItem extends StatelessWidget {
   const NavItem({
-    Key key,
-    @required this.title,
-    @required this.tapEvent
+    Key? key,
+    required this.title,
+    required this.tapEvent
   }) : super(key: key);
 
   final String title;
